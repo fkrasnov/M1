@@ -1,4 +1,5 @@
-\documentclass[12pt]{book}
+\documentclass[a4paper,12pt,oneside,openany,article]{memoir} %,draft twoside
+
 \usepackage[utf8]{inputenc}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[russian]{babel}
@@ -6,16 +7,9 @@
 \graphicspath{ {media/} }
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{csquotes}
-\usepackage[backend=biber,style=numeric]{biblatex}
-%\usepackage{microtype}
-\addbibresource[label=othercites]{othercites.bib}
-\addbibresource[label=authorpapersVAK]{authorpapersVAK.bib}
-\addbibresource[label=authorpapers]{authorpapers.bib}
-\addbibresource[label=authorconferences]{authorconferences.bib}
-\addbibresource[label=authorsvid]{authorsvid.bib}
-
-
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{cmap}
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
@@ -28,15 +22,47 @@
 
 \usepackage{float} %% картинки на том месте где нужно
 \usepackage{enumerate} % Для римских цифр в списке
-\usepackage{booktabs}
+
+\newcommand\blank[1][\textwidth]{\noindent\rule[-.2ex]{#1}{.4pt}}
+%%%\geometry{a5paper, top=14mm, bottom=14mm, inner=18mm, outer=10mm, footskip=5mm, nomarginpar}%, showframe
+%%%\setlength{\topskip}{0pt}   %размер дополнительного верхнего поля
+
+%%% Интервалы %%%
+%% По ГОСТ Р 7.0.11-2011, пункту 5.3.6 требуется полуторный интервал
+%% Реализация средствами класса (на основе setspace) ближе к типографской классике.
+%% И правит сразу и в таблицах (если со звёздочкой)
+%\DoubleSpacing*     % Двойной интервал
+\OnehalfSpacing*    % Полуторный интервал
+%\setSpacing{1.42}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
+
+%%% Макет страницы %%%
+% Выставляем значения полей (ГОСТ 7.0.11-2011, 5.3.7)
+\geometry{a4paper, top=2cm, bottom=2cm, left=2.5cm, right=1cm, nofoot, nomarginpar} %, heightrounded, showframe
+\setlength{\topskip}{0pt}   %размер дополнительного верхнего поля
+\setlength{\footskip}{12.3pt} % снимет warning, согласно https://tex.stackexchange.com/a/334346
+
+%%% Выравнивание и переносы %%%
+%% http://tex.stackexchange.com/questions/241343/what-is-the-meaning-of-fussy-sloppy-emergencystretch-tolerance-hbadness
+%% http://www.latex-community.org/forum/viewtopic.php?p=70342#p70342
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em % В случае проблем регулировать в первую очередь
+\hfuzz 0.3pt
+\vfuzz \hfuzz
+%\raggedbottom
+%\sloppy                 % Избавляемся от переполнений
+\clubpenalty=10000      % Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=10000     % Запрещаем разрыв страницы после последней строки абзаца
+\brokenpenalty=4991     % Ограничение на разрыв страницы, если строка заканчивается переносом
 
 
-\title{Методология измерения научной эффективности научно-технического центра в нефтегазовой отрасли}
-\author{Федор Краснов}
+\input{biblatex}
 
 \begin{document}
-\maketitle
-\tableofcontents
+
+\input{title}        % Титульный лист
+
+\mainmatter*                  % Нумерация страниц не изменится, но начнётся с новой страницы
 
 \include{0-Introduction}
 \include{1-Review}
@@ -45,8 +71,6 @@
 \include{4-Conclusions}
 
 \listoffigures
-
-%\printbibliography
 
 \part*{Публикации автора}
 
@@ -70,6 +94,7 @@
 	\printbibliography[title={Другие публикации автора.}]
 \end{refsection}
 
+\input{footer}
 \end{document}
 
 

@@ -1,4 +1,4 @@
-\chapter[Объект и метод]{Объект и методы исследования}
+\section[Объект и метод]{Объект и методы исследования}
 \label{cha:objectandmethod}
 
 \section{Цифровые экосистемы}
@@ -710,7 +710,7 @@ f (\mathbb{E}_{p \left( t \right)} \, t) \geqslant \mathbb{E}_{p \left( t \right
 Для дальнейшего рассмотрения приведем следующее определение расстояния Кульбака — Лейблера \ref{eq:kl0}. 
 
 \begin{equation} \label{eq:kl0}
-\mathcal{KL}(q \Vert  p) = \int_x q \left( x \right) \, \log \frac{q \left( x \right)}{p \left(  x \right)} \, {\rm d}x
+\mathcal{KL}(q \Vert  p) = \int_x q \left( x \right) \, \log \frac{q \left( x \right)}{p \left(  x \right)} \, {\textrm d}x
 \end{equation}
 
 Отметим, что точнее будет называть расстояния Кульбака — Лейблера мерой различия двух распределений $q \left( x \right)$ и $p \left(  x \right)$, так как по определению данная мера не обладаем симметрией: $\mathcal{KL}(q \Vert p) \neq \mathcal{KL}(p \Vert q)$. 
@@ -721,7 +721,7 @@ f (\mathbb{E}_{p \left( t \right)} \, t) \geqslant \mathbb{E}_{p \left( t \right
 \mathcal{KL}(q \Vert   p) 
 & = & \mathit{E}_q \left(  - \log	 \frac{q}{p} \right) \\
 & = & \mathit{E}_q \left(  - \log	 \frac{p}{q} \right) \leqslant  \log \left( \mathit{E}_q \frac{q}{p} \right)\\
-& = & \log \int_x q \left( x \right) \, \frac{q \left( x \right)}{p \left(  x \right)} \, {\rm d}x \\
+& = & \log \int_x q \left( x \right) \, \frac{q \left( x \right)}{p \left(  x \right)} \, {\textrm d}x \\
 & = & 0
 \end{eqnarray}
 Рассмотрим применение EM-алгоритма для нахождения скрытых параметров НТЦ.
@@ -983,15 +983,15 @@ P(W \vert \Phi) \rightarrow max_\Phi
 Тогда профилем компетенций для сотрудника называется вектор $\vec{\kappa} \left( w \right)$ (\ref{eq:team1}).
 
 \begin{equation}\label{eq:team1}
-\vec{\kappa}\left( w \right) = (\kappa_1, \ldots, \kappa_{\bf N}) \mbox{, где } w\in {W}, \kappa_i \in \mathbf{R}^{+}.
+\vec{\kappa}\left( w \right) = (\kappa_1, \ldots, \kappa_{\textbf{N}}) \mbox{, где } w\in {W}, \kappa_i \in \mathbf{R}^{+}.
 \end{equation}
 
 Профиль компетенций команды $T$ состоящей из $M$ человек - это вектор той же размерности $N$, который определяется как сумма по всем участникам команды:
 
 \begin{equation}\label{eq:team2}
-\vec{\kappa} \left( T \right)  = \sum_{i=1}^{{\bf M}}
+\vec{\kappa} \left( T \right)  = \sum_{i=1}^{\textbf{M}}
 \vec{\kappa} \left( w_i \right) \mbox{, где } 
-T= \{w_1, \ldots, w_{\bf M} : w_i \in {W} \}.
+T= \{w_1, \ldots, w_{\textbf{M}} : w_i \in {W} \}.
 \end{equation}
 
 Неформально $i$-я компонента вектора соответствует производительности человека и команды при выполнении задач определенного типа.
@@ -1019,12 +1019,12 @@ T= \{w_1, \ldots, w_{\bf M} : w_i \in {W} \}.
 \gamma(T, p, t) = \gamma'(\vec{\kappa}(T), \vec{\kappa}(p), t).
 \end{eqnarray}
 
-Пусть далее $\bf K$ обозначает всё пространство возможных значений вектора компетенций. Тогда тот факт, что в нашей модели алгоритм командообразования зависит только от профилей компетенций участника, команды и цели, задает тип функций $\alpha'$, $\beta'$ и $\gamma'$:
+Пусть далее $\textbf{K}$ обозначает всё пространство возможных значений вектора компетенций. Тогда тот факт, что в нашей модели алгоритм командообразования зависит только от профилей компетенций участника, команды и цели, задает тип функций $\alpha'$, $\beta'$ и $\gamma'$:
 
 \begin{eqnarray} \label{eq:team5}
-\alpha': {\bf K} ^2 \to \{0, 1\},\;\;\;
-\beta': {\bf K} ^3 \to \{0, 1\},\;\;\;
-\gamma': {\bf K} ^2 \to \{0, 1\}
+\alpha': {\textbf{K}} ^2 \to \{0, 1\},\;\;\;
+\beta': {\textbf{K}} ^3 \to \{0, 1\},\;\;\;
+\gamma': {\textbf{K}} ^2 \to \{0, 1\}
 \end{eqnarray}
 
 Эти функции можно описать в виде следующих логических формул:
