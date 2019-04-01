@@ -1,0 +1,76 @@
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\graphicspath{ {media/} }
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=numeric]{biblatex}
+%\usepackage{microtype}
+\addbibresource[label=othercites]{othercites.bib}
+\addbibresource[label=authorpapersVAK]{authorpapersVAK.bib}
+\addbibresource[label=authorpapers]{authorpapers.bib}
+\addbibresource[label=authorconferences]{authorconferences.bib}
+\addbibresource[label=authorsvid]{authorsvid.bib}
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{ntheorem}
+\theoremseparator{:}
+\newtheorem{hyp}{Гипотеза}
+\newtheorem{state}{Утверждение}
+\newtheorem{defi}{Опредеделние}
+\newtheorem{que}{Исследовательский вопрос}
+
+\usepackage{float} %% картинки на том месте где нужно
+\usepackage{enumerate} % Для римских цифр в списке
+\usepackage{booktabs}
+
+
+\title{Методология измерения научной эффективности научно-технического центра в нефтегазовой отрасли}
+\author{Федор Краснов}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\include{0-Introduction}
+\include{1-Review}
+\include{2-ObjectMethod}
+\include{3-Experiment}
+\include{4-Conclusions}
+
+\listoffigures
+
+%\printbibliography
+
+\part*{Публикации автора}
+
+\begin{refsection}[authorpapersVAK]
+	\nocite{*}
+	\printbibliography[title={Публикации в изданиях рекомендованных ВАК.}]
+\end{refsection}
+
+\begin{refsection}[authorsvid]
+	\nocite{*}
+	\printbibliography[title={Свидетельства.}]
+\end{refsection}
+
+\begin{refsection}[authorconferences]
+	\nocite{*}
+	\printbibliography[title={Материалы конференций.}]
+\end{refsection}
+
+\begin{refsection}[authorpapers]
+	\nocite{*}
+	\printbibliography[title={Другие публикации автора.}]
+\end{refsection}
+
+\end{document}
+
+
+
